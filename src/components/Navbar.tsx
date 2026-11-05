@@ -139,10 +139,8 @@ export const Navbar: React.FC<NavbarProps> = ({
           <div className="flex items-center gap-2.5 sm:gap-3 shrink-0 py-0.5">
             <a
               href="#/home"
-              onClick={(e) => {
-                e.preventDefault();
-                handleNavClick('home');
-              }}
+              target="_blank"
+              rel="noopener noreferrer"
               className="hidden sm:block shrink-0 focus:outline-hidden transition-transform hover:scale-105 cursor-pointer"
               aria-label="Quran Education Home"
             >
@@ -156,10 +154,8 @@ export const Navbar: React.FC<NavbarProps> = ({
             <div className="flex flex-col text-left">
               <a
                 href="#/home"
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleNavClick('home');
-                }}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="focus:outline-hidden cursor-pointer"
               >
                 <span className="text-lg sm:text-xl md:text-[21px] font-serif font-black text-[#FCB205] tracking-tight leading-none">
@@ -194,10 +190,8 @@ export const Navbar: React.FC<NavbarProps> = ({
                     >
                       <a
                         href={`#/${targetHash}`}
-                        onClick={(e) => {
-                          e.preventDefault();
-                          handleNavClick(link.page);
-                        }}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className={`flex items-center gap-1 text-[12.5px] xl:text-[13.5px] font-medium tracking-normal transition-colors py-1.5 px-1.5 cursor-pointer ${
                           isActive
                             ? 'text-[#0A3826] font-semibold'
@@ -219,11 +213,9 @@ export const Navbar: React.FC<NavbarProps> = ({
                             <a
                               key={c.slug}
                               href={`#/course/${c.slug}`}
-                              onClick={(e) => {
-                                e.preventDefault();
-                                onNavigate('course-detail', c.slug);
-                                setIsCoursesDropdownOpen(false);
-                              }}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              onClick={() => setIsCoursesDropdownOpen(false)}
                               className="block px-3.5 py-2 text-sm font-medium text-slate-700 hover:bg-emerald-50 hover:text-[#0A3826] transition-colors cursor-pointer"
                             >
                               {c.name}
@@ -232,11 +224,9 @@ export const Navbar: React.FC<NavbarProps> = ({
                           <div className="mt-1 pt-1 border-t border-slate-100">
                             <a
                               href="#/courses"
-                              onClick={(e) => {
-                                e.preventDefault();
-                                handleNavClick('courses');
-                                setIsCoursesDropdownOpen(false);
-                              }}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              onClick={() => setIsCoursesDropdownOpen(false)}
                               className="block px-3.5 py-1.5 text-xs font-bold text-[#0A3826] hover:underline cursor-pointer"
                             >
                               View All Courses →
@@ -252,10 +242,8 @@ export const Navbar: React.FC<NavbarProps> = ({
                   <a
                     key={link.label}
                     href={`#/${targetHash}`}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handleNavClick(link.page, link.isAction);
-                    }}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className={`flex items-center gap-1 text-[12.5px] xl:text-[13.5px] font-medium tracking-normal transition-colors py-1.5 px-1.5 cursor-pointer whitespace-nowrap ${
                       isActive
                         ? 'text-[#0A3826] font-semibold'
@@ -295,10 +283,9 @@ export const Navbar: React.FC<NavbarProps> = ({
                 <a
                   key={link.label}
                   href={`#/${targetHash}`}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleNavClick(link.page, link.isAction);
-                  }}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setIsMobileMenuOpen(false)}
                   className={`flex items-center gap-3 text-base font-bold uppercase py-2.5 px-3.5 rounded-xl transition-colors cursor-pointer ${
                     isActive
                       ? 'bg-emerald-50 text-[#0A3826]'
@@ -322,15 +309,15 @@ export const Navbar: React.FC<NavbarProps> = ({
               <span>info@quraneducation.uk</span>
             </a>
 
-            <button
-              onClick={() => {
-                setIsMobileMenuOpen(false);
-                onOpenEnroll();
-              }}
+            <a
+              href="#/enroll"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setIsMobileMenuOpen(false)}
               className="w-full py-3 bg-gradient-to-r from-[#0A3826] to-[#072C1E] text-white rounded-xl text-sm font-bold uppercase tracking-wider shadow-md text-center block cursor-pointer"
             >
               Book 3-Day Free Trial
-            </button>
+            </a>
           </div>
         </div>
       )}

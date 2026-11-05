@@ -149,12 +149,14 @@ export const TeachersPage: React.FC<TeachersPageProps> = ({ onNavigate, onOpenEn
                     {teacher.studentsTaught}+ Students Taught
                   </span>
 
-                  <button
-                    onClick={() => onOpenEnroll()}
-                    className="px-4 py-2 bg-[#0A3826] hover:bg-[#072C1E] text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-colors cursor-pointer shadow-xs"
+                  <a
+                    href="#/enroll"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 bg-[#0A3826] hover:bg-[#072C1E] text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-colors cursor-pointer shadow-xs inline-block"
                   >
                     Book Trial
-                  </button>
+                  </a>
                 </div>
               </div>
             ))}

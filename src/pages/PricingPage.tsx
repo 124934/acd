@@ -171,16 +171,18 @@ export const PricingPage: React.FC<PricingPageProps> = ({ onNavigate, onOpenEnro
                   </div>
 
                   <div>
-                    <button
-                      onClick={() => onOpenEnroll(plan.id)}
-                      className={`w-full py-3.5 px-4 rounded-xl text-xs font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer shadow-md ${
+                    <a
+                      href="#/enroll"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`w-full block text-center py-3.5 px-4 rounded-xl text-xs font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer shadow-md ${
                         isPopular
                           ? 'bg-gradient-to-r from-[#FCB205] to-[#E5BE1D] hover:from-[#FCE253] hover:to-[#FCB205] text-slate-900 font-extrabold'
                           : 'bg-[#0A3826] hover:bg-[#072C1E] text-white'
                       }`}
                     >
                       Book 3-Day Free Trial
-                    </button>
+                    </a>
                     <p
                       className={`text-[10px] text-center mt-2.5 ${
                         isPopular ? 'text-emerald-300/60' : 'text-slate-400'

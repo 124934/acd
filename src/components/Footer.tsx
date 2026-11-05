@@ -170,12 +170,17 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenEnroll }) => {
         
         {/* Brand Header Section: Logo Centered Directly Above Quran Education & Description */}
         <div className="pt-2 sm:pt-3 pb-3 sm:pb-4 pl-2 sm:pl-6 lg:pl-10 max-w-2xl">
-          <div className="flex flex-col items-center text-center w-full">
+          <a
+            href="#/home"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex flex-col items-center text-center w-full group cursor-pointer"
+          >
             {/* Logo centered directly above Quran Education - enlarged & clean transparent */}
             <img
               src="/logo.png"
               alt="Quran Education Logo"
-              className="h-20 sm:h-24 md:h-28 w-auto object-contain drop-shadow-md mb-2"
+              className="h-20 sm:h-24 md:h-28 w-auto object-contain drop-shadow-md mb-2 group-hover:scale-105 transition-transform"
             />
             <div className="flex items-baseline justify-center gap-2">
               <span className="text-2xl sm:text-3xl md:text-4xl font-serif text-[#FCB205] font-bold leading-none drop-shadow-xs">
@@ -189,7 +194,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenEnroll }) => {
             <span className="text-xs sm:text-sm md:text-[15px] text-[#FCB205] font-semibold lowercase tracking-wider mt-1.5 font-serif text-center">
               online islamic academy
             </span>
-          </div>
+          </a>
 
           {/* User Required Description directly below logo */}
           <p className="mt-3.5 text-white/90 text-sm sm:text-[15px] leading-relaxed font-normal text-left sm:text-center">
@@ -359,10 +364,8 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenEnroll }) => {
                   <li key={item.label}>
                     <a
                       href={`#/${targetHash}`}
-                      onClick={(e) => {
-                        e.preventDefault();
-                        handleNav(item.page);
-                      }}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="flex items-center gap-2 text-white/95 hover:text-[#FCB205] transition-colors text-sm sm:text-[15px] font-normal cursor-pointer text-left py-0.5"
                     >
                       <span className="text-[#FCB205] font-bold text-sm select-none">›</span>
@@ -451,10 +454,8 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenEnroll }) => {
           <div className="flex items-center gap-3">
             <a
               href="#/privacy"
-              onClick={(e) => {
-                e.preventDefault();
-                handleNav('privacy');
-              }}
+              target="_blank"
+              rel="noopener noreferrer"
               className="hover:text-[#FCB205] transition-colors cursor-pointer"
             >
               Privacy Policy
@@ -462,10 +463,8 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenEnroll }) => {
             <span>·</span>
             <a
               href="#/terms"
-              onClick={(e) => {
-                e.preventDefault();
-                handleNav('terms');
-              }}
+              target="_blank"
+              rel="noopener noreferrer"
               className="hover:text-[#FCB205] transition-colors cursor-pointer"
             >
               Terms of Service

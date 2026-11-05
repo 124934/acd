@@ -256,13 +256,15 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenEnroll }) 
 
               {/* Action Buttons */}
               <div className="pt-1 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4 w-full sm:w-auto">
-                <button
-                  onClick={() => onOpenEnroll()}
+                <a
+                  href="#/enroll"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-gradient-to-r from-[#0A3826] to-[#072C1E] hover:from-[#0E4B33] hover:to-[#0A3826] text-white rounded-xl text-sm sm:text-base font-bold uppercase tracking-wider transition-all duration-200 shadow-md shadow-emerald-950/20 hover:shadow-xl active:scale-95 cursor-pointer whitespace-nowrap"
                 >
                   <span>Book 3-Day Free Trial</span>
                   <ArrowRight className="w-4 h-4 text-[#FCB205]" />
-                </button>
+                </a>
 
                 <a
                   href={`${ACADEMY_CONFIG.whatsappUrl}?text=${encodeURIComponent(
@@ -361,13 +363,15 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenEnroll }) 
 
             {/* Two Buttons: Enroll Now & WhatsApp on single line */}
             <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
-              <button
-                onClick={() => onOpenEnroll()}
+              <a
+                href="#/enroll"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 bg-[#0A3826] hover:bg-[#072C1E] text-white rounded-xl text-sm font-bold uppercase tracking-wider transition-all shadow-md cursor-pointer whitespace-nowrap"
               >
                 <span>Enroll Now</span>
                 <ArrowRight className="w-4 h-4 text-[#FCB205]" />
-              </button>
+              </a>
 
               <a
                 href={`${ACADEMY_CONFIG.whatsappUrl}?text=${encodeURIComponent(
@@ -401,13 +405,15 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenEnroll }) 
               </p>
             </div>
 
-            <button
-              onClick={() => onNavigate('courses')}
+            <a
+              href="#/courses"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 text-sm font-bold text-[#0A3826] hover:text-[#072C1E] group cursor-pointer"
             >
               <span>View All Courses</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </button>
+            </a>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 text-left">
@@ -440,18 +446,22 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenEnroll }) 
                 </div>
 
                 <div className="px-6 pb-6 pt-2 flex items-center gap-2">
-                  <button
-                    onClick={() => onNavigate('course-detail', course.slug || course.id)}
+                  <a
+                    href={`#/course/${course.slug || course.id}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex-1 py-2.5 px-3 bg-white hover:bg-slate-100 text-slate-700 text-xs sm:text-sm font-semibold rounded-xl border border-slate-300 transition-colors text-center cursor-pointer"
                   >
                     View Details
-                  </button>
-                  <button
-                    onClick={() => onOpenEnroll(course.id)}
+                  </a>
+                  <a
+                    href="#/enroll"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex-1 py-2.5 px-3 bg-[#0A3826] hover:bg-[#072C1E] text-white text-xs sm:text-sm font-bold rounded-xl transition-colors text-center cursor-pointer"
                   >
                     Enroll Now
-                  </button>
+                  </a>
                 </div>
               </div>
             ))}
@@ -459,13 +469,15 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenEnroll }) 
 
           {/* Bottom Button: Our Packages */}
           <div className="mt-8 sm:mt-10 flex justify-center">
-            <button
-              onClick={() => onNavigate('pricing')}
+            <a
+              href="#/packages"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 bg-[#0A3826] hover:bg-[#072C1E] text-white rounded-xl text-sm sm:text-base font-bold uppercase tracking-wider transition-all shadow-md active:scale-95 cursor-pointer whitespace-nowrap"
             >
               <span>Our Packages</span>
               <ArrowRight className="w-4 h-4 text-[#FCB205]" />
-            </button>
+            </a>
           </div>
         </div>
       </section>
@@ -519,13 +531,15 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenEnroll }) 
 
           {/* Action buttons below the 6 steps */}
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button
-              onClick={() => onNavigate('contact')}
+            <a
+              href="#/contact"
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 bg-[#0A3826] hover:bg-[#072C1E] text-white rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider transition-all shadow-md active:scale-95 cursor-pointer whitespace-nowrap"
             >
               <span>Contact Academy</span>
               <ArrowRight className="w-4 h-4 text-[#FCB205]" />
-            </button>
+            </a>
 
             <a
               href={`${ACADEMY_CONFIG.whatsappUrl}?text=${encodeURIComponent(
@@ -539,13 +553,15 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenEnroll }) 
               <span className="whitespace-nowrap">WhatsApp: {ACADEMY_CONFIG.whatsapp}</span>
             </a>
 
-            <button
-              onClick={() => onOpenEnroll()}
+            <a
+              href="#/enroll"
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 bg-gradient-to-r from-[#FCB205] to-[#E5BE1D] hover:from-[#FCE253] hover:to-[#FCB205] text-slate-950 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider transition-all shadow-md active:scale-95 cursor-pointer whitespace-nowrap"
             >
               <span>Book 3-Day Free Trial</span>
               <Sparkles className="w-4 h-4 text-[#072C1E]" />
-            </button>
+            </a>
           </div>
         </div>
       </section>
@@ -553,29 +569,35 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenEnroll }) 
       {/* 5. Mobile Action View */}
       <section className="block md:hidden relative py-6 px-4 bg-transparent border-b border-slate-200/50">
         <div className="relative max-w-sm mx-auto flex flex-col gap-2.5">
-          <button
-            onClick={() => onNavigate('how-it-works')}
+          <a
+            href="#/how-it-works"
+            target="_blank"
+            rel="noopener noreferrer"
             className="w-full inline-flex items-center justify-center gap-2.5 px-8 py-3.5 bg-[#0A3826] hover:bg-[#072C1E] text-white rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider transition-all shadow-md active:scale-95 cursor-pointer whitespace-nowrap"
           >
             <span>How It Works</span>
             <ArrowRight className="w-4 h-4 text-[#FCB205]" />
-          </button>
+          </a>
 
-          <button
-            onClick={() => onNavigate('contact')}
+          <a
+            href="#/contact"
+            target="_blank"
+            rel="noopener noreferrer"
             className="w-full inline-flex items-center justify-center gap-2.5 px-8 py-3.5 bg-[#0A3826] hover:bg-[#072C1E] text-white rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider transition-all shadow-md active:scale-95 cursor-pointer whitespace-nowrap"
           >
             <span>Contact Academy</span>
             <ArrowRight className="w-4 h-4 text-[#FCB205]" />
-          </button>
+          </a>
 
-          <button
-            onClick={() => onNavigate('contact')}
+          <a
+            href="#/contact"
+            target="_blank"
+            rel="noopener noreferrer"
             className="w-full inline-flex items-center justify-center gap-2.5 px-8 py-3.5 bg-gradient-to-r from-[#FCB205] to-[#E5BE1D] hover:from-[#FCE253] hover:to-[#FCB205] text-slate-950 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider transition-all shadow-md active:scale-95 cursor-pointer whitespace-nowrap"
           >
             <span>Academy Contact Form</span>
             <ArrowRight className="w-4 h-4 text-[#072C1E]" />
-          </button>
+          </a>
 
           <a
             href="https://wa.me/923187779954?text=As-salamu%20alaykum!%20I%20would%20like%20to%20begin%20my%20Quran%20learning%20journey%20and%20schedule%20my%203-Day%20Free%20Trial."

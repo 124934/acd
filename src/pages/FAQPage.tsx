@@ -153,12 +153,14 @@ export const FAQPage: React.FC<FAQPageProps> = ({ onNavigate, onOpenEnroll }) =>
                 <span className="whitespace-nowrap">Chat on WhatsApp: +92 318 7779954</span>
               </a>
 
-              <button
-                onClick={onOpenEnroll}
-                className="w-full sm:w-auto px-6 py-3 bg-white/10 hover:bg-white/20 text-white rounded-xl text-xs font-semibold uppercase tracking-wider transition-colors border border-white/20 cursor-pointer whitespace-nowrap"
+              <a
+                href="#/enroll"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto px-6 py-3 bg-white/10 hover:bg-white/20 text-white rounded-xl text-xs font-semibold uppercase tracking-wider transition-colors border border-white/20 cursor-pointer whitespace-nowrap text-center"
               >
                 Book 3-Day Free Trial
-              </button>
+              </a>
             </div>
           </div>
         </div>

@@ -117,19 +117,23 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({ onNavigate, onOpenEnro
                 </div>
 
                 <div className="px-7 pb-7 pt-2 flex items-center gap-3">
-                  <button
-                    onClick={() => onNavigate('course-detail', course.slug || course.id)}
+                  <a
+                    href={`#/course/${course.slug || course.id}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex-1 py-3 px-3 bg-white hover:bg-slate-100 text-slate-700 text-xs font-bold rounded-xl border border-slate-300 transition-colors text-center cursor-pointer shadow-xs"
                   >
                     Full Syllabus
-                  </button>
+                  </a>
 
-                  <button
-                    onClick={() => onOpenEnroll(course.id)}
+                  <a
+                    href="#/enroll"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex-1 py-3 px-3 bg-[#0A3826] hover:bg-[#072C1E] text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-colors text-center cursor-pointer shadow-md"
                   >
                     Enroll Now
-                  </button>
+                  </a>
                 </div>
               </div>
             ))}

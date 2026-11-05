@@ -83,14 +83,14 @@ export default function App() {
   // Sync document title and favicon dynamically for every open page/tab
   useEffect(() => {
     const titles: Record<string, string> = {
-      home: 'Home | Quran Education - Online Quran Academy',
-      courses: 'All Courses | Quran Education',
+      home: 'Quran Education | Online Quran Academy',
+      courses: 'Our Courses | Quran Education',
       about: 'About Us | Quran Education',
       'how-it-works': 'How It Works | Quran Education',
-      pricing: 'Packages & Tuition | Quran Education',
+      pricing: 'Our Packages | Quran Education',
       admissions: 'Enroll in 3-Day Free Trial | Quran Education',
-      blog: 'Islamic Blog & Guides | Quran Education',
-      faq: 'FAQ | Quran Education',
+      blog: 'Islamic Blog | Quran Education',
+      faq: 'Frequently Asked Questions | Quran Education',
       contact: 'Contact Us | Quran Education',
       teachers: 'Our Certified Scholars | Quran Education',
       testimonials: 'Student Reviews & Success Stories | Quran Education',
@@ -112,27 +112,36 @@ export default function App() {
       };
       document.title = courseTitles[courseSlug] || 'Course Details | Quran Education';
     } else {
-      document.title = titles[currentPage] || 'Quran Education | Online Islamic Academy';
+      document.title = titles[currentPage] || 'Quran Education | Online Quran Academy';
     }
 
-    // Ensure tab favicon is set to logo.png
-    let link = document.querySelector<HTMLLinkElement>("link[rel*='icon']");
-    if (!link) {
-      link = document.createElement('link');
-      link.rel = 'icon';
-      document.head.appendChild(link);
-    }
-    link.type = 'image/png';
-    link.href = '/logo.png';
+    // Ensure browser tab favicon is always set to logo.png
+    const iconRels = ['icon', 'shortcut icon', 'apple-touch-icon'];
+    iconRels.forEach((rel) => {
+      let link = document.querySelector<HTMLLinkElement>(`link[rel='${rel}']`);
+      if (!link) {
+        link = document.createElement('link');
+        link.rel = rel;
+        document.head.appendChild(link);
+      }
+      link.type = 'image/png';
+      link.href = '/logo.png';
+    });
   }, [currentPage, courseSlug]);
 
-  const handleNavigate = (page: PageRoute, slug?: string) => {
+  const handleNavigate = (page: PageRoute, slug?: string, inNewTab = true) => {
     const targetHash =
       page === 'course-detail' && slug
         ? `#/course/${slug}`
         : `#/${page === 'pricing' ? 'packages' : page === 'admissions' ? 'enroll' : page}`;
-    window.location.hash = targetHash;
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    if (inNewTab) {
+      const targetUrl = `${window.location.origin}${window.location.pathname}${targetHash}`;
+      window.open(targetUrl, '_blank', 'noopener,noreferrer');
+    } else {
+      window.location.hash = targetHash;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   };
 
   const handleOpenEnroll = (courseId?: string) => {

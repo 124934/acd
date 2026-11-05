@@ -167,13 +167,15 @@ export const HowItWorksPage: React.FC<HowItWorksPageProps> = ({ onNavigate, onOp
           </div>
 
           <div className="mt-16 text-center">
-            <button
-              onClick={onOpenEnroll}
+            <a
+              href="#/enroll"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-8 py-4 bg-[#0A3826] hover:bg-[#072C1E] text-white rounded-xl text-xs font-bold uppercase tracking-wider transition-colors shadow-lg cursor-pointer"
             >
               <span>Start Your Free 3-Day Trial</span>
               <ArrowRight className="w-4 h-4 text-[#FCB205]" />
-            </button>
+            </a>
           </div>
         </div>
       </section>

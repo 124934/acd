@@ -42,19 +42,23 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
         <div className="relative max-w-5xl mx-auto px-4 sm:px-8 text-left">
           {/* Breadcrumb */}
           <div className="flex items-center gap-2 text-xs text-slate-500 mb-6">
-            <button
-              onClick={() => onNavigate('home')}
+            <a
+              href="#/home"
+              target="_blank"
+              rel="noopener noreferrer"
               className="hover:text-[#0A3826] transition-colors cursor-pointer"
             >
               Home
-            </button>
+            </a>
             <span>/</span>
-            <button
-              onClick={() => onNavigate('courses')}
+            <a
+              href="#/courses"
+              target="_blank"
+              rel="noopener noreferrer"
               className="hover:text-[#0A3826] transition-colors cursor-pointer"
             >
               Courses
-            </button>
+            </a>
             <span>/</span>
             <span className="font-semibold text-slate-700">{course.title}</span>
           </div>
@@ -109,13 +113,15 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
                 </p>
               </div>
 
-              <button
-                onClick={() => onOpenEnroll(course.id)}
+              <a
+                href="#/enroll"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-full py-3.5 bg-gradient-to-r from-[#0A3826] to-[#072C1E] hover:from-[#0E4B33] hover:to-[#0A3826] text-white text-xs font-bold uppercase tracking-wider rounded-xl shadow-md transition-all cursor-pointer flex items-center justify-center gap-2"
               >
                 <span>Book Free Trial Class</span>
                 <ArrowRight className="w-3.5 h-3.5 text-[#FCB205]" />
-              </button>
+              </a>
 
               <a
                 href={`https://wa.me/923187779954?text=${encodeURIComponent(
@@ -251,18 +257,22 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
               Book your 3-day complimentary assessment today. Connect with an accredited scholar suited to your preferred schedule.
             </p>
             <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <button
-                onClick={() => onOpenEnroll(course.id)}
+              <a
+                href="#/enroll"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-full sm:w-auto px-7 py-3.5 bg-gradient-to-r from-[#D4AF37] to-[#C5A059] text-slate-900 rounded-xl font-bold text-xs uppercase tracking-wider shadow-lg cursor-pointer"
               >
                 Book 3-Day Free Trial
-              </button>
-              <button
-                onClick={() => onNavigate('courses')}
+              </a>
+              <a
+                href="#/courses"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-full sm:w-auto px-6 py-3.5 bg-white/10 hover:bg-white/20 text-white rounded-xl text-xs font-semibold uppercase tracking-wider transition-colors border border-white/20 cursor-pointer"
               >
                 Browse Other Courses
-              </button>
+              </a>
             </div>
           </div>
         </div>
