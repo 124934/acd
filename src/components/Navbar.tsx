@@ -135,13 +135,13 @@ export const Navbar: React.FC<NavbarProps> = ({
       >
         <div className="w-full max-w-[1560px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 flex items-center justify-between gap-4">
           
-          {/* Left Side: On mobile, logo image is removed and ONLY text is displayed */}
-          <div className="flex items-center gap-2.5 sm:gap-3 shrink-0 py-0.5">
+          {/* Desktop Branding (Left-aligned, exact setting as before) */}
+          <div className="hidden lg:flex items-center gap-2.5 sm:gap-3 shrink-0 py-0.5">
             <a
               href="#/home"
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden sm:block shrink-0 focus:outline-hidden transition-transform hover:scale-105 cursor-pointer"
+              className="shrink-0 focus:outline-hidden transition-transform hover:scale-105 cursor-pointer"
               aria-label="Quran Education Home"
             >
               <img
@@ -169,6 +169,32 @@ export const Navbar: React.FC<NavbarProps> = ({
                 </span>
               </div>
             </div>
+          </div>
+
+          {/* Symmetrical Left Spacer for Mobile Only */}
+          <div className="w-9 shrink-0 lg:hidden" aria-hidden="true" />
+
+          {/* Mobile Branding ONLY: Centered Logo + Quran Education + Online Quran Academy centered directly below */}
+          <div className="flex lg:hidden flex-1 justify-center items-center py-1">
+            <a
+              href="#/home"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-col items-center text-center focus:outline-hidden cursor-pointer group"
+              aria-label="Quran Education Home"
+            >
+              <img
+                src="/logo.png"
+                alt="Quran Education Logo"
+                className="h-8 w-auto object-contain drop-shadow-xs mb-1"
+              />
+              <span className="text-lg font-serif font-black text-[#FCB205] tracking-tight leading-none text-center">
+                Quran Education
+              </span>
+              <span className="text-[8.5px] text-black font-extrabold tracking-wider uppercase mt-1 font-sans leading-none text-center whitespace-nowrap">
+                Online Quran Academy
+              </span>
+            </a>
           </div>
 
           {/* Center/Right Navigation: Less bold, reduced width & compact spacing */}

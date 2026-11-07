@@ -133,8 +133,12 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenEnroll }) => {
 
   return (
     <footer className="w-full relative mt-6 text-white selection:bg-[#0A3826] selection:text-white bg-transparent">
-      {/* Background Layer: Asymmetrical Arched Canopy matching user's reference image */}
-      <div className="absolute inset-0 w-full h-full pointer-events-none select-none z-0 overflow-hidden">
+      {/* ======================================================== */}
+      {/* DESKTOP FOOTER (Unchanged, exactly as originally styled) */}
+      {/* ======================================================== */}
+      <div className="hidden lg:block relative w-full">
+        {/* Background Layer: Asymmetrical Arched Canopy matching user's reference image */}
+        <div className="absolute inset-0 w-full h-full pointer-events-none select-none z-0 overflow-hidden">
         <svg
           className="w-full h-full"
           viewBox="0 0 1440 440"
@@ -472,6 +476,281 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenEnroll }) => {
           </div>
         </div>
 
+      </div>
+      </div>
+
+      {/* ======================================================== */}
+      {/* MOBILE FOOTER (Learnquraan.co.uk Inspired Clean Layout)   */}
+      {/* ======================================================== */}
+      <div className="block lg:hidden relative w-full bg-[#052618] text-white border-t-2 border-[#FCB205] shadow-2xl px-5 pt-8 pb-10">
+        <div className="max-w-md mx-auto flex flex-col items-center text-center space-y-6">
+          
+          {/* 1. Brand Header: Centered Logo + Title + Disclaimer */}
+          <div className="flex flex-col items-center text-center w-full">
+            <a
+              href="#/home"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-col items-center group cursor-pointer"
+            >
+              <img
+                src="/logo.png"
+                alt="Quran Education Logo"
+                className="h-20 w-auto object-contain drop-shadow-md mb-2 group-hover:scale-105 transition-transform"
+              />
+              <div className="flex items-baseline justify-center gap-2">
+                <span className="text-2xl font-serif text-[#FCB205] font-bold leading-none">
+                  Quran
+                </span>
+                <span className="text-2xl font-sans text-[#FCB205] font-black leading-none">
+                  Education
+                </span>
+              </div>
+              <span className="text-xs text-[#FCB205] font-semibold lowercase tracking-wider mt-1 font-serif">
+                online islamic academy
+              </span>
+            </a>
+
+            <p className="mt-3.5 text-white/85 text-xs sm:text-sm leading-relaxed max-w-sm">
+              Quran Education is a non-partisan organization, we are not part of any group, Islamic organization or mosques. We welcome all students interested in learning Quran.
+            </p>
+          </div>
+
+          {/* Golden Divider */}
+          <div className="w-24 h-[1px] bg-[#FCB205]/60 mx-auto" />
+
+          {/* 2. Contact Details: Stacked Cards with Icons */}
+          <div className="w-full flex flex-col items-center space-y-3">
+            <h3 className="text-xs font-bold text-[#FCB205] uppercase tracking-wider">
+              FEEL FREE TO CONTACT US
+            </h3>
+
+            <div className="w-full max-w-xs space-y-2.5">
+              {/* Phone 1: WhatsApp +92 318 7779954 with Green Border */}
+              <a
+                href="https://wa.me/923187779954"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 p-2.5 rounded-xl border-2 border-emerald-500 bg-emerald-950/40 hover:bg-emerald-900/50 transition-colors"
+              >
+                <div className="w-8 h-8 rounded-full bg-[#25D366] text-white flex items-center justify-center shrink-0 shadow-sm">
+                  <svg className="w-4 h-4 fill-white shrink-0" viewBox="0 0 24 24">
+                    <path d="M12.031 2C6.496 2 2 6.496 2 12.031c0 1.97.57 3.807 1.558 5.36L2 22l4.75-1.523A9.97 9.97 0 0 0 12.031 22C17.566 22 22 17.566 22 12.031 22 6.496 17.566 2 12.031 2zm5.72 14.34c-.24.67-1.39 1.28-1.92 1.36-.51.08-1.17.11-3.79-.95-2.24-.9-3.69-3.17-3.8-3.32-.11-.15-.92-1.22-.92-2.33 0-1.11.58-1.65.79-1.88.2-.23.45-.29.6-.29.15 0 .3 0 .43.01.14.01.32-.05.5.39.18.44.62 1.52.68 1.63.06.11.1.25.02.4-.07.15-.11.24-.22.37-.11.13-.23.29-.33.39-.11.11-.23.23-.1.45.13.22.58.96 1.25 1.56.86.77 1.59 1.01 1.81 1.12.22.11.35.1.48-.05.13-.15.56-.65.71-.88.15-.22.3-.18.5-.11.2.07 1.29.61 1.51.72.22.11.37.17.43.26.05.1.05.58-.19 1.25z" />
+                  </svg>
+                </div>
+                <span className="text-white text-sm font-semibold tracking-wide">
+                  +92 318 7779954
+                </span>
+              </a>
+
+              {/* Phone 2: +92 309 6000449 */}
+              <a
+                href="tel:+923096000449"
+                className="flex items-center gap-3 p-2.5 rounded-xl border border-white/10 bg-emerald-950/20 hover:bg-emerald-900/40 transition-colors"
+              >
+                <div className="w-8 h-8 rounded-full bg-white text-[#032918] flex items-center justify-center shrink-0 shadow-sm">
+                  <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                    <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.02l-2.2 2.2z" />
+                  </svg>
+                </div>
+                <span className="text-white text-sm font-medium tracking-wide">
+                  +92 309 6000449
+                </span>
+              </a>
+
+              {/* Email with Green Border */}
+              <a
+                href="mailto:info@quraneducation.uk"
+                className="flex items-center gap-3 p-2.5 rounded-xl border-2 border-emerald-500 bg-emerald-950/40 hover:bg-emerald-900/50 transition-colors"
+              >
+                <div className="w-8 h-8 rounded-full bg-white text-[#032918] flex items-center justify-center shrink-0 shadow-sm">
+                  <Mail className="w-4 h-4 text-[#032918]" />
+                </div>
+                <span className="text-white text-sm font-medium break-all">
+                  info@quraneducation.uk
+                </span>
+              </a>
+            </div>
+          </div>
+
+          {/* Golden Divider */}
+          <div className="w-24 h-[1px] bg-[#FCB205]/60 mx-auto" />
+
+          {/* 3. Socialize With Us */}
+          <div className="w-full flex flex-col items-center space-y-3">
+            <h3 className="text-xs font-bold text-[#FCB205] uppercase tracking-wider">
+              SOCIALIZE WITH US
+            </h3>
+
+            <div className="flex items-center justify-center gap-3">
+              {/* YouTube */}
+              <a
+                href="https://www.youtube.com/@quraan_education"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="YouTube"
+                title="YouTube"
+                className="w-9 h-9 rounded-full bg-white text-[#FF0000] hover:bg-[#FF0000] hover:text-white flex items-center justify-center transition-all shadow-md active:scale-95 cursor-pointer"
+              >
+                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                </svg>
+              </a>
+
+              {/* Twitter / X */}
+              <a
+                href="https://twitter.com/QuranAcadmi?t=sX209JpBDAqc4_R8IPPd-w&s=08"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Twitter / X"
+                title="Twitter / X"
+                className="w-9 h-9 rounded-full bg-white text-slate-900 hover:bg-black hover:text-white flex items-center justify-center transition-all shadow-md active:scale-95 cursor-pointer"
+              >
+                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                </svg>
+              </a>
+
+              {/* Instagram */}
+              <a
+                href="https://www.instagram.com/quraanedu?vrfl=cnYzYmxwemV3ZTAx"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                title="Instagram"
+                className="w-9 h-9 rounded-full bg-white text-[#E4405F] hover:bg-gradient-to-tr hover:from-[#F58529] hover:via-[#DD2A7B] hover:to-[#8134AF] hover:text-white flex items-center justify-center transition-all shadow-md active:scale-95 cursor-pointer"
+              >
+                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                </svg>
+              </a>
+
+              {/* Facebook */}
+              <a
+                href="https://www.facebook.com/share/1HU5RwzueL/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                title="Facebook"
+                className="w-9 h-9 rounded-full bg-white text-[#1877F2] hover:bg-[#1877F2] hover:text-white flex items-center justify-center transition-all shadow-md active:scale-95 cursor-pointer"
+              >
+                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                  <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" />
+                </svg>
+              </a>
+
+              {/* TikTok */}
+              <a
+                href="https://www.tiktok.com/@quran.education08?_t=8n1wB3K3UD5&_r=1"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="TikTok"
+                title="TikTok"
+                className="w-9 h-9 rounded-full bg-white text-slate-900 hover:bg-black hover:text-white flex items-center justify-center transition-all shadow-md active:scale-95 cursor-pointer"
+              >
+                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                  <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          {/* Golden Divider */}
+          <div className="w-24 h-[1px] bg-[#FCB205]/60 mx-auto" />
+
+          {/* 4. Quick Links: 2 Columns */}
+          <div className="w-full">
+            <h3 className="text-xs font-bold text-[#FCB205] uppercase tracking-wider mb-3">
+              QUICK LINKS
+            </h3>
+
+            <div className="grid grid-cols-2 gap-x-4 gap-y-2 text-left max-w-xs mx-auto">
+              {quickLinks.map((item) => {
+                const targetHash = item.page === 'pricing' ? 'packages' : item.page === 'admissions' ? 'enroll' : item.page;
+                return (
+                  <a
+                    key={item.label}
+                    href={`#/${targetHash}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1.5 text-white/90 hover:text-[#FCB205] text-xs py-0.5"
+                  >
+                    <span className="text-[#FCB205] font-bold select-none">›</span>
+                    <span>{item.label}</span>
+                  </a>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Golden Divider */}
+          <div className="w-24 h-[1px] bg-[#FCB205]/60 mx-auto" />
+
+          {/* 5. Students Gallery: Compact Grid */}
+          <div className="w-full">
+            <h3 className="text-xs font-bold text-[#FCB205] uppercase tracking-wider mb-3">
+              STUDENTS GALLERY
+            </h3>
+
+            <div className="grid grid-cols-4 gap-2 max-w-xs mx-auto">
+              {students.map((student) => (
+                <button
+                  key={student.id}
+                  onClick={() => setSelectedStudent(student)}
+                  className="relative rounded-xl overflow-hidden aspect-square border border-white/20 shadow-xs bg-emerald-950/40 cursor-pointer active:scale-95 transition-transform"
+                  title={`${student.name} - ${student.course}`}
+                >
+                  <img
+                    src={student.src}
+                    alt={student.alt}
+                    referrerPolicy="no-referrer"
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </button>
+              ))}
+
+              {/* 12th Tile: Golden VIEW MORE */}
+              <button
+                onClick={() => setSelectedStudent(students[0])}
+                className="rounded-xl aspect-square bg-[#FCB205] text-[#072C1E] border border-[#FCB205] shadow-xs flex flex-col items-center justify-center p-1 cursor-pointer active:scale-95 transition-all text-center"
+                title="View Student Gallery"
+              >
+                <span className="text-[10px] font-black text-[#072C1E] tracking-widest leading-none">
+                  VIEW
+                </span>
+                <span className="text-[10px] font-black text-[#072C1E] tracking-widest leading-none mt-0.5">
+                  MORE
+                </span>
+              </button>
+            </div>
+          </div>
+
+          {/* Bottom Copyright & Legal Links */}
+          <div className="w-full pt-4 border-t border-emerald-900/60 text-[11px] text-emerald-200/70 space-y-2">
+            <p>© {new Date().getFullYear()} Quran Education. All rights reserved.</p>
+            <div className="flex items-center justify-center gap-3">
+              <a
+                href="#/privacy"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-[#FCB205] transition-colors"
+              >
+                Privacy Policy
+              </a>
+              <span>·</span>
+              <a
+                href="#/terms"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-[#FCB205] transition-colors"
+              >
+                Terms of Service
+              </a>
+            </div>
+          </div>
+
+        </div>
       </div>
 
       {/* Interactive Lightbox Modal for Student Gallery & Enrollment Portaled to Body */}

@@ -235,9 +235,9 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenEnroll }) 
             {/* Right Side: Clean Background with Bismillah, Title & CTA */}
             <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left space-y-5 lg:pl-10 xl:pl-14 relative z-20">
               
-              {/* Desktop Bismillah (Hidden on Mobile since mobile Bismillah is above slider) */}
-              <div className="hidden lg:inline-flex flex-col items-start select-none">
-                <div className="font-arabic text-3xl md:text-4xl text-[#0A3826] font-bold tracking-wider leading-relaxed">
+              {/* Desktop Bismillah centered in the middle above Online Quran Academy */}
+              <div className="hidden lg:flex w-full justify-center select-none">
+                <div className="font-arabic text-3xl md:text-4xl text-[#0A3826] font-bold tracking-wider leading-relaxed text-center">
                   بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
                 </div>
               </div>
@@ -279,24 +279,24 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenEnroll }) 
                 </a>
               </div>
 
-              {/* Key Features Section - 4 points: Cost-Effective, 1-on-1 Personalized Scholars, Flexible 24/7 Global Timing, Certified Male and Female Scholars */}
-              <div className="pt-1 flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4 text-xs sm:text-sm font-medium text-slate-700">
-                <span className="flex items-center gap-1.5 whitespace-nowrap">
+              {/* Key Features Section - 4 points in exact order, each in a separate row */}
+              <div className="pt-2 flex flex-col items-center lg:items-start gap-2.5 text-xs sm:text-sm font-medium text-slate-700">
+                <div className="flex items-center gap-2 whitespace-nowrap">
                   <CheckCircle className="w-4 h-4 text-emerald-600 shrink-0" />
-                  Cost-Effective
-                </span>
-                <span className="flex items-center gap-1.5 whitespace-nowrap">
+                  <span>Cost-Effective</span>
+                </div>
+                <div className="flex items-center gap-2 whitespace-nowrap">
                   <CheckCircle className="w-4 h-4 text-emerald-600 shrink-0" />
-                  1-on-1 Personalized Scholars
-                </span>
-                <span className="flex items-center gap-1.5 whitespace-nowrap">
+                  <span>Flexible 24/7 Hours</span>
+                </div>
+                <div className="flex items-center gap-2 whitespace-nowrap">
                   <CheckCircle className="w-4 h-4 text-emerald-600 shrink-0" />
-                  Flexible 24/7 Global Timing
-                </span>
-                <span className="flex items-center gap-1.5 whitespace-nowrap">
+                  <span>1-on-1 Personalized Scholars</span>
+                </div>
+                <div className="flex items-center gap-2 whitespace-nowrap">
                   <CheckCircle className="w-4 h-4 text-emerald-600 shrink-0" />
-                  Certified Male and Female Scholars
-                </span>
+                  <span>Certified Male and Female Scholars</span>
+                </div>
               </div>
             </div>
 
@@ -566,50 +566,6 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenEnroll }) 
         </div>
       </section>
 
-      {/* 5. Mobile Action View */}
-      <section className="block md:hidden relative py-6 px-4 bg-transparent border-b border-slate-200/50">
-        <div className="relative max-w-sm mx-auto flex flex-col gap-2.5">
-          <a
-            href="#/how-it-works"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full inline-flex items-center justify-center gap-2.5 px-8 py-3.5 bg-[#0A3826] hover:bg-[#072C1E] text-white rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider transition-all shadow-md active:scale-95 cursor-pointer whitespace-nowrap"
-          >
-            <span>How It Works</span>
-            <ArrowRight className="w-4 h-4 text-[#FCB205]" />
-          </a>
-
-          <a
-            href="#/contact"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full inline-flex items-center justify-center gap-2.5 px-8 py-3.5 bg-[#0A3826] hover:bg-[#072C1E] text-white rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider transition-all shadow-md active:scale-95 cursor-pointer whitespace-nowrap"
-          >
-            <span>Contact Academy</span>
-            <ArrowRight className="w-4 h-4 text-[#FCB205]" />
-          </a>
-
-          <a
-            href="#/contact"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full inline-flex items-center justify-center gap-2.5 px-8 py-3.5 bg-gradient-to-r from-[#FCB205] to-[#E5BE1D] hover:from-[#FCE253] hover:to-[#FCB205] text-slate-950 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider transition-all shadow-md active:scale-95 cursor-pointer whitespace-nowrap"
-          >
-            <span>Academy Contact Form</span>
-            <ArrowRight className="w-4 h-4 text-[#072C1E]" />
-          </a>
-
-          <a
-            href="https://wa.me/923187779954?text=As-salamu%20alaykum!%20I%20would%20like%20to%20begin%20my%20Quran%20learning%20journey%20and%20schedule%20my%203-Day%20Free%20Trial."
-            className="w-full inline-flex items-center justify-center gap-2.5 px-8 py-3.5 bg-[#25D366] hover:bg-[#20BD5A] text-white rounded-xl text-xs sm:text-sm font-bold transition-all shadow-md active:scale-95 whitespace-nowrap cursor-pointer"
-          >
-            <svg className="w-4 h-4 fill-white shrink-0" viewBox="0 0 24 24">
-              <path d="M12.031 2C6.496 2 2 6.496 2 12.031c0 1.97.57 3.807 1.558 5.36L2 22l4.75-1.523A9.97 9.97 0 0 0 12.031 22C17.566 22 22 17.566 22 12.031 22 6.496 17.566 2 12.031 2zm5.72 14.34c-.24.67-1.39 1.28-1.92 1.36-.51.08-1.17.11-3.79-.95-2.24-.9-3.69-3.17-3.8-3.32-.11-.15-.92-1.22-.92-2.33 0-1.11.58-1.65.79-1.88.2-.23.45-.29.6-.29.15 0 .3 0 .43.01.14.01.32-.05.5.39.18.44.62 1.52.68 1.63.06.11.1.25.02.4-.07.15-.11.24-.22.37-.11.13-.23.29-.33.39-.11.11-.23.23-.1.45.13.22.58.96 1.25 1.56.86.77 1.59 1.01 1.81 1.12.22.11.35.1.48-.05.13-.15.56-.65.71-.88.15-.22.3-.18.5-.11.2.07 1.29.61 1.51.72.22.11.37.17.43.26.05.1.05.58-.19 1.25z" />
-            </svg>
-            <span className="whitespace-nowrap">WhatsApp: +92 318 7779954</span>
-          </a>
-        </div>
-      </section>
 
       {/* 7. Student Reviews / Testimonials Section */}
       <section className="relative py-10 sm:py-14 bg-transparent">
