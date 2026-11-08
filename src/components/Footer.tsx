@@ -480,10 +480,40 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenEnroll }) => {
       </div>
 
       {/* ======================================================== */}
-      {/* MOBILE FOOTER (Learnquraan.co.uk Inspired Clean Layout)   */}
+      {/* MOBILE FOOTER (With Reference Arched Canopy & Styling)   */}
       {/* ======================================================== */}
-      <div className="block lg:hidden relative w-full bg-[#052618] text-white border-t-2 border-[#FCB205] shadow-2xl px-5 pt-8 pb-10">
-        <div className="max-w-md mx-auto flex flex-col items-center text-center space-y-6">
+      <div className="block lg:hidden relative w-full text-white bg-transparent pt-14 pb-10 overflow-hidden">
+        {/* Background Layer: Asymmetrical Arched Canopy for Mobile (matching reference image) */}
+        <div className="absolute inset-0 w-full h-full pointer-events-none select-none z-0 overflow-hidden">
+          <svg
+            className="w-full h-full"
+            viewBox="0 0 450 1150"
+            preserveAspectRatio="none"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            {/* Secondary Layer: Faint Warm Silver-Gray Wave */}
+            <path
+              d="M0,48 C75,24 140,8 215,12 C315,16 385,42 450,30 L450,1150 L0,1150 Z"
+              fill="#D5D2C9"
+              fillOpacity="0.55"
+            />
+            {/* Primary Layer: Dark Forest Green Canopy Shape */}
+            <path
+              d="M0,68 C65,36 130,0 215,0 C285,0 380,36 450,50 L450,1150 L0,1150 Z"
+              fill="#032918"
+            />
+            {/* Islamic Architectural Arch Trim Line */}
+            <path
+              d="M0,72 C65,40 130,4 215,4 C285,4 380,40 450,54"
+              stroke="#FCB205"
+              strokeWidth="2"
+              strokeLinecap="round"
+            />
+          </svg>
+        </div>
+
+        <div className="relative z-10 max-w-md mx-auto px-5 flex flex-col items-center text-center space-y-6">
           
           {/* 1. Brand Header: Centered Logo + Title + Disclaimer */}
           <div className="flex flex-col items-center text-center w-full">
@@ -519,41 +549,45 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenEnroll }) => {
           {/* Golden Divider */}
           <div className="w-24 h-[1px] bg-[#FCB205]/60 mx-auto" />
 
-          {/* 2. Contact Details: Stacked Cards with Icons */}
+          {/* 2. Contact Details: Stacked Cards with Icons (Exact same WhatsApp style as desktop) */}
           <div className="w-full flex flex-col items-center space-y-3">
             <h3 className="text-xs font-bold text-[#FCB205] uppercase tracking-wider">
               FEEL FREE TO CONTACT US
             </h3>
 
             <div className="w-full max-w-xs space-y-2.5">
-              {/* Phone 1: WhatsApp +92 318 7779954 with Green Border */}
+              {/* Phone 1: WhatsApp +92 318 7779954 with Green Border & Desktop WhatsApp Icon */}
               <a
                 href="https://wa.me/923187779954"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 p-2.5 rounded-xl border-2 border-emerald-500 bg-emerald-950/40 hover:bg-emerald-900/50 transition-colors"
+                title="Chat with +92 318 7779954 on WhatsApp"
               >
-                <div className="w-8 h-8 rounded-full bg-[#25D366] text-white flex items-center justify-center shrink-0 shadow-sm">
-                  <svg className="w-4 h-4 fill-white shrink-0" viewBox="0 0 24 24">
+                <div className="w-8 h-8 rounded-full bg-white text-[#032918] flex items-center justify-center shrink-0 shadow-sm">
+                  <svg className="w-4 h-4 fill-[#25D366]" viewBox="0 0 24 24">
                     <path d="M12.031 2C6.496 2 2 6.496 2 12.031c0 1.97.57 3.807 1.558 5.36L2 22l4.75-1.523A9.97 9.97 0 0 0 12.031 22C17.566 22 22 17.566 22 12.031 22 6.496 17.566 2 12.031 2zm5.72 14.34c-.24.67-1.39 1.28-1.92 1.36-.51.08-1.17.11-3.79-.95-2.24-.9-3.69-3.17-3.8-3.32-.11-.15-.92-1.22-.92-2.33 0-1.11.58-1.65.79-1.88.2-.23.45-.29.6-.29.15 0 .3 0 .43.01.14.01.32-.05.5.39.18.44.62 1.52.68 1.63.06.11.1.25.02.4-.07.15-.11.24-.22.37-.11.13-.23.29-.33.39-.11.11-.23.23-.1.45.13.22.58.96 1.25 1.56.86.77 1.59 1.01 1.81 1.12.22.11.35.1.48-.05.13-.15.56-.65.71-.88.15-.22.3-.18.5-.11.2.07 1.29.61 1.51.72.22.11.37.17.43.26.05.1.05.58-.19 1.25z" />
                   </svg>
                 </div>
-                <span className="text-white text-sm font-semibold tracking-wide">
+                <span className="text-white text-sm font-semibold tracking-wide font-mono">
                   +92 318 7779954
                 </span>
               </a>
 
-              {/* Phone 2: +92 309 6000449 */}
+              {/* Phone 2: WhatsApp +92 309 6000449 with Desktop WhatsApp Icon */}
               <a
-                href="tel:+923096000449"
+                href="https://wa.me/923096000449"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-3 p-2.5 rounded-xl border border-white/10 bg-emerald-950/20 hover:bg-emerald-900/40 transition-colors"
+                title="Chat with +92 309 6000449 on WhatsApp"
               >
                 <div className="w-8 h-8 rounded-full bg-white text-[#032918] flex items-center justify-center shrink-0 shadow-sm">
-                  <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                    <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.02l-2.2 2.2z" />
+                  <svg className="w-4 h-4 fill-[#25D366]" viewBox="0 0 24 24">
+                    <path d="M12.031 2C6.496 2 2 6.496 2 12.031c0 1.97.57 3.807 1.558 5.36L2 22l4.75-1.523A9.97 9.97 0 0 0 12.031 22C17.566 22 22 17.566 22 12.031 22 6.496 17.566 2 12.031 2zm5.72 14.34c-.24.67-1.39 1.28-1.92 1.36-.51.08-1.17.11-3.79-.95-2.24-.9-3.69-3.17-3.8-3.32-.11-.15-.92-1.22-.92-2.33 0-1.11.58-1.65.79-1.88.2-.23.45-.29.6-.29.15 0 .3 0 .43.01.14.01.32-.05.5.39.18.44.62 1.52.68 1.63.06.11.1.25.02.4-.07.15-.11.24-.22.37-.11.13-.23.29-.33.39-.11.11-.23.23-.1.45.13.22.58.96 1.25 1.56.86.77 1.59 1.01 1.81 1.12.22.11.35.1.48-.05.13-.15.56-.65.71-.88.15-.22.3-.18.5-.11.2.07 1.29.61 1.51.72.22.11.37.17.43.26.05.1.05.58-.19 1.25z" />
                   </svg>
                 </div>
-                <span className="text-white text-sm font-medium tracking-wide">
+                <span className="text-white text-sm font-medium tracking-wide font-mono">
                   +92 309 6000449
                 </span>
               </a>
@@ -658,28 +692,103 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenEnroll }) => {
           {/* Golden Divider */}
           <div className="w-24 h-[1px] bg-[#FCB205]/60 mx-auto" />
 
-          {/* 4. Quick Links: 2 Columns */}
-          <div className="w-full">
-            <h3 className="text-xs font-bold text-[#FCB205] uppercase tracking-wider mb-3">
+          {/* 4. Quick Links: Centered Heading directly above the 2 Columns */}
+          <div className="w-fit mx-auto flex flex-col items-center">
+            {/* Centered Heading above both columns */}
+            <h3 className="text-xs font-bold text-[#FCB205] uppercase tracking-wider text-center w-full mb-3 select-none">
               QUICK LINKS
             </h3>
 
-            <div className="grid grid-cols-2 gap-x-4 gap-y-2 text-left max-w-xs mx-auto">
-              {quickLinks.map((item) => {
-                const targetHash = item.page === 'pricing' ? 'packages' : item.page === 'admissions' ? 'enroll' : item.page;
-                return (
-                  <a
-                    key={item.label}
-                    href={`#/${targetHash}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-1.5 text-white/90 hover:text-[#FCB205] text-xs py-0.5"
-                  >
-                    <span className="text-[#FCB205] font-bold select-none">›</span>
-                    <span>{item.label}</span>
-                  </a>
-                );
-              })}
+            {/* 2 Columns container */}
+            <div className="grid grid-cols-2 gap-x-8 text-left">
+              {/* Column 1: Home, Courses, Packages, FAQ, Enroll */}
+              <div className="flex flex-col space-y-2">
+                <a
+                  href="#/home"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 text-white/95 hover:text-[#FCB205] text-xs font-medium cursor-pointer whitespace-nowrap"
+                >
+                  <span className="text-[#FCB205] font-bold select-none">›</span>
+                  <span>Home</span>
+                </a>
+                <a
+                  href="#/courses"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 text-white/95 hover:text-[#FCB205] text-xs font-medium cursor-pointer whitespace-nowrap"
+                >
+                  <span className="text-[#FCB205] font-bold select-none">›</span>
+                  <span>Courses</span>
+                </a>
+                <a
+                  href="#/packages"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 text-white/95 hover:text-[#FCB205] text-xs font-medium cursor-pointer whitespace-nowrap"
+                >
+                  <span className="text-[#FCB205] font-bold select-none">›</span>
+                  <span>Packages</span>
+                </a>
+                <a
+                  href="#/faq"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 text-white/95 hover:text-[#FCB205] text-xs font-medium cursor-pointer whitespace-nowrap"
+                >
+                  <span className="text-[#FCB205] font-bold select-none">›</span>
+                  <span>FAQ</span>
+                </a>
+                <a
+                  href="#/enroll"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 text-white/95 hover:text-[#FCB205] text-xs font-medium cursor-pointer whitespace-nowrap"
+                >
+                  <span className="text-[#FCB205] font-bold select-none">›</span>
+                  <span>Enroll</span>
+                </a>
+              </div>
+
+              {/* Column 2: About, How It Works, Blog, Contact */}
+              <div className="flex flex-col space-y-2">
+                <a
+                  href="#/about"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 text-white/95 hover:text-[#FCB205] text-xs font-medium cursor-pointer whitespace-nowrap"
+                >
+                  <span className="text-[#FCB205] font-bold select-none">›</span>
+                  <span>About</span>
+                </a>
+                <a
+                  href="#/how-it-works"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 text-white/95 hover:text-[#FCB205] text-xs font-medium cursor-pointer whitespace-nowrap"
+                >
+                  <span className="text-[#FCB205] font-bold select-none">›</span>
+                  <span>How It Works</span>
+                </a>
+                <a
+                  href="#/blog"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 text-white/95 hover:text-[#FCB205] text-xs font-medium cursor-pointer whitespace-nowrap"
+                >
+                  <span className="text-[#FCB205] font-bold select-none">›</span>
+                  <span>Blog</span>
+                </a>
+                <a
+                  href="#/contact"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 text-white/95 hover:text-[#FCB205] text-xs font-medium cursor-pointer whitespace-nowrap"
+                >
+                  <span className="text-[#FCB205] font-bold select-none">›</span>
+                  <span>Contact</span>
+                </a>
+              </div>
             </div>
           </div>
 

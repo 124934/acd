@@ -174,7 +174,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           {/* Symmetrical Left Spacer for Mobile Only */}
           <div className="w-9 shrink-0 lg:hidden" aria-hidden="true" />
 
-          {/* Mobile Branding ONLY: Centered Logo + Quran Education + Online Quran Academy centered directly below */}
+          {/* Mobile Branding ONLY: Quran Education + Online Quran Academy centered directly below (Logo removed for mobile) */}
           <div className="flex lg:hidden flex-1 justify-center items-center py-1">
             <a
               href="#/home"
@@ -183,11 +183,6 @@ export const Navbar: React.FC<NavbarProps> = ({
               className="flex flex-col items-center text-center focus:outline-hidden cursor-pointer group"
               aria-label="Quran Education Home"
             >
-              <img
-                src="/logo.png"
-                alt="Quran Education Logo"
-                className="h-8 w-auto object-contain drop-shadow-xs mb-1"
-              />
               <span className="text-lg font-serif font-black text-[#FCB205] tracking-tight leading-none text-center">
                 Quran Education
               </span>
